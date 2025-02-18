@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .result-image {
+            width: 100px;
+            height: 100px;
+            margin: 15px auto;
+        }
+
+        .result-positive {
+            color: red;
+        }
+
+        .result-negative {
+            color: green;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        
+        {% if result.prediction == "Alzheimer's Detected" %}
+            <img src="https://cdn-icons-png.flaticon.com/512/5780/5780816.png" alt="Positive result" class="result-image">
+            <p class="result-positive">Predicted Diagnosis: <strong>{{ result.prediction }}</strong></p>
+            <p class="result-positive">Probability of Alzheimer's: <strong>{{ result.probability }}%</strong></p>
+        {% else %}
+            <img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Negative result" class="result-image">
+            <p class="result-negative">Predicted Diagnosis: <strong>{{ result.prediction }}</strong></p>
+            <p class="result-negative">Probability of Alzheimer's: <strong>{{ result.probability }}%</strong></p>
+        {% endif %}
+        
+        <a href="/" class="back-button">Go Back</a>
+    </div>
+
+</body>
+</html>

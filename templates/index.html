@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer's Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #444;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Alzheimer's Prediction</h1>
+    <div class="form-container">
+        <form method="POST" action="/index">
+            <label for="MMSE">MMSE Score:</label>
+            <input type="text" id="MMSE" name="MMSE" required>
+
+            <label for="FunctionalAssessment">Functional Assessment:</label>
+            <input type="text" id="FunctionalAssessment" name="FA" required>
+
+            <label for="MemoryComplaints">Memory Complaints:</label>
+            <input type="text" id="MemoryComplaints" name="MC" required>
+
+            <label for="BehavioralProblems">Behavioral Problems:</label>
+            <input type="text" id="BehavioralProblems" name="BP" required>
+
+            <label for="ADL">Activities of Daily Living (ADL):</label>
+            <input type="text" id="ADL" name="ADL" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>
