@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Test - AI-Powered Alzheimer's Risk Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="test-body">
+    <div class="test-container">
+        <h2>Alzheimer's Risk Assessment</h2>
+        <form action="/submit-test" method="POST">
+            <!-- MMSE Score -->
+            <label for="mmse">MMSE Score (Out of 30):</label>
+            <input type="number" id="mmse" name="mmse" min="0" max="30" required placeholder="Enter MMSE Score">
+
+            <!-- Memory Complaints -->
+            <label for="memory">Memory Complaints:</label>
+            <select id="memory" name="memory" required>
+                <option value="">Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Behavior Complaints -->
+            <label for="behavior">Behavior Complaints:</label>
+            <select id="behavior" name="behavior" required>
+                <option value="">Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- ADL (Activities of Daily Living) -->
+            <label for="adl">ADL (Activities of Daily Living) Score:</label>
+            <input type="number" id="adl" name="adl" min="0" max="100" required placeholder="Enter ADL Score">
+
+            <!-- Additional Parameters -->
+            <label for="other">Other Parameters (Optional):</label>
+            <textarea id="other" name="other" placeholder="Enter any additional details..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="cta-btn">Submit Test</button>
+        </form>
+    </div>
+</body>
+
+</html>
