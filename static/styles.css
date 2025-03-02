@@ -1,0 +1,434 @@
+/* Updated CSS for the AI-Powered Alzheimer's Risk Predictor */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    padding: 0;
+    background-color: #f9f9f9;
+    line-height: 1.8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('assets/Features.png') no-repeat center center;
+    background-size: cover; 
+    padding: 20px 50px;
+    border-radius: 12px; 
+}
+
+
+
+header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #4a4a4a;
+}
+
+.btn {
+    padding: 12px 24px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 40px;
+}
+
+.content {
+    max-width: 50%;
+}
+
+.cta-btn {
+    padding: 16px 32px;
+    margin-top: 30px;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+}
+
+.features {
+    background: url('assets/Features.png') no-repeat center center;
+    background-size: cover; 
+    padding: 60px; 
+    color: black; 
+    border-radius: 16px; 
+}
+
+.feature-container {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 40px; 
+}
+
+.feature-item {
+    flex: 1; 
+    margin: 20px 0; 
+    text-align: center;
+}
+
+.feature-item img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    margin-bottom: 16px; 
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 12px; 
+}
+
+.feature-item p {
+    font-size: 16px; 
+    line-height: 1.5; 
+}
+
+.assessment {
+    text-align: center;
+    margin: 100px 0;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form button {
+    padding: 12px 24px;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+form button:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Additional Form Field Styles */
+input[type="text"]:nth-of-type(1) {
+    margin-top: 10px;
+}
+/* Signup Page Styling */
+.signup-body {
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-sizing: border-box; 
+    background: linear-gradient(to right, #B8DDEE, #C4D0C2); 
+}
+
+.signup-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: linear-gradient(to right, #B8DDEE, #C4D0C2); 
+    width: 100vw; 
+    height: 100vh; 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+.signup-box {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    margin-top : 270px;
+    margin-bottom : 20px;
+}
+
+.signup-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-box input {
+    width: auto;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.signup-box button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.signup-box button:hover {
+    transform: scale(1.05);
+}
+
+.signup-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-box a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*Login Page Styling*/
+.login-body {
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-sizing: border-box; 
+    background: linear-gradient(to right, #B8DDEE, #C4D0C2); 
+}
+
+.login-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: linear-gradient(to right, #B8DDEE, #C4D0C2); 
+    width: 100vw; 
+    height: 100vh; 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    margin-top : 20px;
+    margin-bottom : 20px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.login-box button:hover {
+    transform: scale(1.05);
+}
+
+.login-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-box a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+/* Test Page Styling */
+.test-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #E3F2FD, #E1F5C4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.test-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.test-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 8px #4a90e2;
+    outline: none;
+}
+
+/* Button Styling */
+.cta-btn {
+    padding: 16px;
+    background: linear-gradient(to right, #4a90e2, #50d5b7);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s;
+    margin-top : 0px;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .test-container {
+        padding: 30px;
+    }
+}
+
+.manpic {
+    margin-right : 45px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}

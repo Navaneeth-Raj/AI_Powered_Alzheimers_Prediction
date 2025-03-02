@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - AI-Powered Alzheimer's Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="signup-body">
+    <div class="signup-container">
+        <div class="signup-box">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" width="120" style="margin-right: 20px;">
+            <h2>Create a New Account</h2>
+            <form action="#" method="POST">
+                
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="1" max="120">
+
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button class="cta-btn" type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>
