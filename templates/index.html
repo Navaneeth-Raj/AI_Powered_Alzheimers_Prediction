@@ -13,20 +13,38 @@
             <nav style="display: flex; align-items: center;"> 
                 <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" width="120" style="margin-right: 20px;"> 
                 <a href="#">HOME PAGE</a>
-                <a href="/assess">RISK ASSESSMENT</a>
+                {% if 'user_id' in session %}
+                    <a href="/assess">RISK ASSESSMENT</a>
+                    <a href="#">INSIGHTS FOR YOU</a>
+                    <a href="/track">TRACK RISK</a>
+                {% else %}
+                    <a href="/login">RISK ASSESSMENT</a>
+                    <a href="/login">INSIGHTS FOR YOU</a>
+                    <a href="/login">TRACK RISK</a>
+                {% endif %}
             </nav>
         </div>
         <div>
-            <a href="/login"><button class="btn">Login</button></a>
-            <a href="/signup"><button class="btn">Signup</button></a>
+            {% if 'user_id' in session %}
+                <span>Welcome, {{ session['username'] }}!</span>
+                <a href="/logout"><button class="btn">Logout</button></a>
+            {% else %}
+                <a href="/login"><button class="btn">Login</button></a>
+                <a href="/signup"><button class="btn">Signup</button></a>
+            {% endif %}
         </div>
     </header>
+    
 
     <div class="container">
         <div class="content">
             <h1>Discover Your Alzheimer's Risk Today</h1>
             <p>Take control of your health with our AI-powered tool that evaluates your risk of Alzheimer's disease. Input your health data and receive a personalized risk score to help guide your proactive healthcare decisions.</p>
-            <a href="/assess"><button class="cta-btn">Take Test</button></a>
+            {% if 'user_id' in session %}
+                <a href="/assess"><button class="cta-btn">Take Test</button></a>
+            {% else %}
+                <a href="/login"><button class="cta-btn">Take Test</button></a>
+            {% endif %}
         </div>
         <img src="{{ url_for('static', filename='assets/im.png') }}" alt="Alzheimer's Awareness" width="400" class="manpic">
     </div>
@@ -35,12 +53,20 @@
             <h2>Your Health, Simplified with These Features</h2>
             <div class="feature-container">
                 <div class="feature-item">
-                    <a href="to_be_developed1.html"><img src="{{ url_for('static', filename='assets/insight.png') }}"></a>
-                    <h3>Personal Insights</h3>
+                    {% if 'user_id' in session %}
+                        <a href="#"><img src="{{ url_for('static', filename='assets/insight.png') }}"></a>
+                    {% else %}
+                        <a href="#"><img src="{{ url_for('static', filename='assets/insight.png') }}"></a>
+                    {% endif %}
+                        <h3>Personal Insights</h3>
                     <p>Receive in-depth, personalized health insights based on your unique profile. Our advanced analysis helps you understand potential risks, track changes over time, and make informed decisions to improve your overall well-being.</p>
                 </div>
                 <div class="feature-item">
-                    <a href="to_be_developed2.html"><img src="{{ url_for('static', filename='assets/track.png') }}"></a>
+                    {% if 'user_id' in session %}
+                        <a href="/track"><img src="{{ url_for('static', filename='assets/track.png') }}"></a>
+                    {% else %}
+                        <a href="/login"><img src="{{ url_for('static', filename='assets/track.png') }}"></a>
+                    {% endif %}
                     <h3>Track Progress</h3>
                     <p>Stay informed by tracking changes in your risk score over time. Monitor trends, identify potential health concerns early, and take proactive steps toward better long-term health management.</p>
                 </div>
@@ -49,7 +75,31 @@
 
     <div class="assessment">
         <h2>Assess Your Alzheimer's Risk Today</h2>
-        <a href="/assess"><button class="btn">Test Now</button>
+        {% if 'user_id' in session %}
+            <a href="/assess"><button class="btn">Test Now</button></a>
+        {% else %}
+            <a href="/login"><button class="btn">Test Now</button></a>
+        {% endif %}
     </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>AI-Powered Alzheimer's Risk Predictor helps individuals assess their risk and take proactive steps towards brain health.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@alzheimerspredictor.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI Alzheimer's Predictor. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
 </body>
 </html>

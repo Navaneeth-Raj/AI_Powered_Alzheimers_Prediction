@@ -66,3 +66,31 @@ def signup_user(connection, form_dict):
     finally :
         cursor.close()
         cut_connection(connection)
+
+def insert_results(connection, user_id, mmse, functional, memory, behavior, adl, probability):
+    try:
+        cursor = connection.cursor()
+        query = """
+            INSERT INTO risk_history (user_id, mmse, functional, memory, behavior, adl, risk_score)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """
+        cursor.execute(query, (user_id, mmse, functional, memory, behavior, adl, probability * 100))
+        connection.commit()
+    except Exception as e:
+        connection.rollback()
+        print(f'Error : {e}')
+    finally :
+        cursor.close()
+        cut_connection(connection)
+
+def get_result(connection, user_id):
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT test_date, risk_score FROM risk_history WHERE user_id=%s ORDER BY test_date ASC", (user_id,))
+        records = cursor.fetchall()
+        return records
+    except Exception as e:
+        print(f'Error : {e}')
+    finally:
+        cursor.close()
+        cut_connection(connection)

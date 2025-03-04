@@ -12,33 +12,34 @@
     <div class="test-container">
         <h2>Alzheimer's Risk Assessment</h2>
         <form action="/submit-test" method="POST">
-            <!-- MMSE Score -->
-            <label for="mmse">MMSE Score (Out of 30):</label>
-            <input type="number" id="mmse" name="mmse" min="0" max="30" required placeholder="Enter MMSE Score">
 
-            <!-- Memory Complaints -->
+            <!-- MMSE Score (Out of 30) -->
+            <label for="mmse">MMSE Score (Out of 30):</label>
+            <input type="number" id="mmse" name="mmse" step="any" required placeholder="Enter MMSE Score">
+
+            <!-- Functional Assessment (Out of 10) -->
+            <label for="functional">Functional Assessment (Out of 10):</label>
+            <input type="number" id="functional" name="functional" step="any" required placeholder="Enter Functional Assessment">
+
+            <!-- Memory Complaints (0 = No, 1 = Yes) -->
             <label for="memory">Memory Complaints:</label>
             <select id="memory" name="memory" required>
                 <option value="">Select an option</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="1">Yes (1)</option>
+                <option value="0">No (0)</option>
             </select>
 
-            <!-- Behavior Complaints -->
-            <label for="behavior">Behavior Complaints:</label>
+            <!-- Behavioral Problems (0 = No, 1 = Yes) -->
+            <label for="behavior">Behavioral Problems:</label>
             <select id="behavior" name="behavior" required>
                 <option value="">Select an option</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="1">Yes (1)</option>
+                <option value="0">No (0)</option>
             </select>
 
-            <!-- ADL (Activities of Daily Living) -->
-            <label for="adl">ADL (Activities of Daily Living) Score:</label>
-            <input type="number" id="adl" name="adl" min="0" max="100" required placeholder="Enter ADL Score">
-
-            <!-- Additional Parameters -->
-            <label for="other">Other Parameters (Optional):</label>
-            <textarea id="other" name="other" placeholder="Enter any additional details..."></textarea>
+            <!-- ADL (Out of 10) -->
+            <label for="adl">ADL Score (Out of 10):</label>
+            <input type="number" id="adl" name="adl" step="any" required placeholder="Enter ADL Score">
 
             <!-- Submit Button -->
             <button type="submit" class="cta-btn">Submit Test</button>
