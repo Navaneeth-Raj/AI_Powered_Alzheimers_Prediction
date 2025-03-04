@@ -70,17 +70,12 @@ def submit_test():
         behavior = int(request.form['behavior'])
         adl = float(request.form['adl'])
 
-        print(f"Received input: MMSE={mmse}, Functional={functional}, Memory={memory}, Behavior={behavior}, ADL={adl}")
-        print("Scaler feature names:", scaler.feature_names_in_)
         input_data = pd.DataFrame([[mmse, functional, memory, behavior, adl]],columns=['MMSE', 'FunctionalAssessment', 'MemoryComplaints', 'BehavioralProblems', 'ADL'])
-        print("Input DataFrame for prediction:\n", input_data)
+
         input_scaled = scaler.transform(input_data)
-        print("Scaled input:\n", input_scaled)
 
         prediction = model.predict(input_scaled)[0]
         probability = model.predict_proba(input_scaled)[0][1]
-
-        print(f"Prediction={prediction}, Probability={probability}")
 
         connection = dbconnect.set_connection()
         if connection:
